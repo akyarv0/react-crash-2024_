@@ -1,4 +1,5 @@
 import logo from "../assets/images/logo.png";
+import logo2 from "../assets/images/Adsız tasarım.png";
 
 import { NavLink } from "react-router-dom";
 
