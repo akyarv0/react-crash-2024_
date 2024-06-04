@@ -29,14 +29,14 @@ const JobPage = ({ deleteJob }) => {
   const job = useLoaderData();
   const navigate = useNavigate();
 
-  const onDeleteClick = (id) => {
+  const onDeleteClick = (id) => { //silme butonu fonksiyonu 
     console.log(id);
     const confirm = window.confirm("Are you sure you want to delete this job?");
     if (!confirm) return;
 
-    deleteJob(id);
+    deleteJob(id); //silme fonksiyonu
     toast.success("Job deleted successfully");
-    navigate("/jobs");
+    navigate("/jobs");//sildikten sonra JobsLİstings e götür
   };
 
   return (
@@ -126,7 +126,7 @@ const JobPage = ({ deleteJob }) => {
       </section>
     </>
   );
-};
+};   //yukarda güncellediğimiz veya sildiğimiz verileri api 'den tekrar alıp göstermek için aşağıdaki job loader i kullandık.
 
 const jobLoader = async ({ params }) => {
   const response = await fetch(`/api/jobs/${params.id}`);

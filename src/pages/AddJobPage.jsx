@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"; 
 
 
-const AddJobPage = ({addJobSubmit}) => {
+const AddJobPage = ({addJobSubmit}) => { // addJobSubmit fonksiyonu ekledim
   const [title, setTitle] = useState("");
   const [type, setType] = useState("Full-Time");
   const [location, setLocation] = useState("");
@@ -35,7 +35,7 @@ const AddJobPage = ({addJobSubmit}) => {
     };
 
    addJobSubmit(newJob);
-   toast.success("Job added successfully");
+   toast.success("Job added successfully");// job eklendiğimde toast.success ile ekrana bilgi verdi
    setCompanyDescription("");
    setContactEmail("");
    setContactPhone("");
@@ -46,7 +46,7 @@ const AddJobPage = ({addJobSubmit}) => {
    setTitle("");
    setType("");
 
-   return navigate("/jobs");
+   return navigate("/jobs");// job eklendikten sonra listeleme sayfasına gitmek için navigate kullandık 
   
   
   };

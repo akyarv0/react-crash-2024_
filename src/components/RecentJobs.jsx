@@ -2,7 +2,7 @@ import { useState,  } from "react";
 import { FaMapMarker } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const JobListing = ({ job }) => {
+const RecentJobs = ({ job }) => {
 
 
 const [showFullDescription, setShowFullDescription] = useState(false)
@@ -25,10 +25,10 @@ if (!showFullDescription) {
 
           <div className="mb-5">{description}</div>
           <button
-          onClick={() => setShowFullDescription((prevState) => !prevState)}
+          onClick={() => setShowFullDescription((prevState) => !prevState)} //başlangıç değeri false her tıklandığında bir önceki state e götürür toggle gibi 
           className='text-indigo-500 mb-5 hover:text-indigo-600'
         >
-          {showFullDescription ? 'Less' : 'More'}
+          {showFullDescription ? 'Less' : 'More'} 
         </button>
 
           <h3 className="text-indigo-500 mb-2">{job.salary} Year</h3>
@@ -53,4 +53,4 @@ if (!showFullDescription) {
   );
 };
 
-export default JobListing;
+export default RecentJobs;

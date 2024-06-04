@@ -11,8 +11,20 @@ import NotFoundPage from "./pages/NotFoundPage";
 import JobPage, { jobLoader } from "./pages/JobPage";
 import AddJobPage from "./pages/AddJobPage";
 import EditJobPage from "./pages/EditJobPage";
+// import axios from 'axios';
 
 const App = () => {
+  // const addJob = async (newJob) => {
+  //     console.log(newJob);
+  //     try {
+  //         const response = await axios.post("/api/jobs", newJob);
+  //         console.log(response);
+  //         return response;
+  //     } catch (error) {
+  //         console.error('An error occurred:', error);
+  //         throw error;
+  //     }
+  // };
   const addJob = async (newJob) => {
     console.log(newJob);
     const response = await fetch("/api/jobs", {
