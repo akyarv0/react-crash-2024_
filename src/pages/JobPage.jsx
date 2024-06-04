@@ -34,7 +34,7 @@ const JobPage = ({ deleteJob }) => {
     const confirm = window.confirm("Are you sure you want to delete this job?");
     if (!confirm) return;
 
-    deleteJob(id); //silme fonksiyonu
+    deleteJob(id); //silme fonksiyonu bu id deki job ı bull ve sil manasına geliyor. 
     toast.success("Job deleted successfully");
     navigate("/jobs");//sildikten sonra JobsLİstings e götür
   };
@@ -44,9 +44,9 @@ const JobPage = ({ deleteJob }) => {
       <section>
         <div className="container m-auto py-6 px-6">
           <Link
-            to="/jobs"
+            to="/jobs" 
             className="text-indigo-500 hover:text-indigo-600 flex items-center"
-          >
+          > {/* back butonu link içine aldık hem yazıya hem icona basınca geri gider */}
             <FaArrowLeft className="mr-2" /> Back to Job Listings
           </Link>
         </div>
@@ -126,7 +126,7 @@ const JobPage = ({ deleteJob }) => {
       </section>
     </>
   );
-};   //yukarda güncellediğimiz veya sildiğimiz verileri api 'den tekrar alıp göstermek için aşağıdaki job loader i kullandık.
+};   //yukarda sildiğimiz verilerin güncel halini api 'den tekrar alıp göstermek için aşağıdaki job loader i kullandık.
 
 const jobLoader = async ({ params }) => {
   const response = await fetch(`/api/jobs/${params.id}`);
@@ -134,4 +134,4 @@ const jobLoader = async ({ params }) => {
   return data;
 };
 
-export { JobPage as default, jobLoader };
+export { JobPage as default, jobLoader }; // export ediyoruz prop ile sonra yakalayıp kullanacağız. 

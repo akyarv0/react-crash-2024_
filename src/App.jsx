@@ -70,7 +70,7 @@ const App = () => {
         <Route
           path="/edit-job/:id"
           element={<EditJobPage updateJobSubmit={updateJob} />}
-          loader={jobLoader}
+          loader={jobLoader} // loader propu ile jobloader i kullandık
         />
 
         <Route
