@@ -10,24 +10,27 @@ import JobsPage from "./pages/JobsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import JobPage, { jobLoader } from "./pages/JobPage";
 import AddJobPage from "./pages/AddJobPage";
-import EditJobPage from './pages/EditJobPage';
+import EditJobPage from "./pages/EditJobPage";
 
 const App = () => {
   const addJob = async (newJob) => {
     console.log(newJob);
     const response = await fetch("/api/jobs", {
+      // Updated endpoint
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newJob),
     });
+    console.log(response);
 
     return response;
   };
 
   const deleteJob = async (id) => {
     const res = await fetch(`/api/jobs/${id}`, {
+      // Updated endpoint
       method: "DELETE",
     });
     return;
@@ -35,15 +38,16 @@ const App = () => {
 
   const updateJob = async (job) => {
     const res = await fetch(`/api/jobs/${job.id}`, {
-      method: 'PUT',
+      // Updated endpoint
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(job),
     });
+    console.log(res);
     return;
   };
-
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -66,11 +70,11 @@ const App = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
-  );
+  ); // Router setup...
+
   return (
     <>
       <RouterProvider router={router} />
-
       {/* <Navbar />
 
       <Hero />
