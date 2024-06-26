@@ -43,6 +43,12 @@ const Navbar = () => {
                   >
                     Add Job
                   </NavLink>
+                  <NavLink
+                    to="/pg"
+                    className={linkClass}
+                  >
+                    Playground
+                  </NavLink>
                 </div>
               </div>
             </div>
